@@ -64,3 +64,23 @@ int main(int argc, char* argv[]) {
 		printf("^^^^^^^^^^^^^^^\n");
 		}
 	}
+
+// see the usage of r, rt, w, wt, r+, w+
+	if ((fp1 = fopen(argv[1], "r")) == NULL) { //fail to open file for read
+		printf("fale to open file.");
+		return 0;
+	}
+	if ((fp2 = fopen(argv[2], "wt")) == NULL) { //fail to open file for write
+		printf("fail to create file for write.");
+		return 0;
+	}
+
+	while (fgets(str, sizeof(str), fp1)) {   // read a file and write to another file line by line
+		printf("%d\n", str);
+		fputs(str, fp2);
+	}
+
+	fclose(fp1);
+	fclose(fp2);
+	return 0;
+}
