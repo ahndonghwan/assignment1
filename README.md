@@ -33,3 +33,39 @@ void printIdx(int cnt) {
 	printf("%s ", s);
 	fprintf(fp, "%s ", s);
 }
+
+void subset(int depth) {
+	int isPrint;
+	int size = _msize(input);
+	if (depth == size) {
+		isPrint = 0;
+		cnt++;
+		printIdx(cnt);
+		for (int i = 0; i < size; i++) {
+			if (isEmpty) {
+				printf("%c", 155);
+				fprintf(fp, "%c", 155);
+				isEmpty = 0;
+				continue;
+			}
+			if (flag[i]) {
+				if (i < size && isPrint) {
+					printf(", ");
+					fputs(", ", fp);
+				}
+				isPrint = 1;
+				printf("%c", input[i]);
+				fprintf(fp, "%c", input[i]);
+			}
+		}
+		printf("\n");
+		fputs("\n", fp);
+		return;
+	}
+	else {
+		flag[depth] = 0;
+		subset(depth + 1);
+		flag[depth] = 1;
+		subset(depth + 1);
+	}
+}
