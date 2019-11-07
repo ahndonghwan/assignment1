@@ -69,3 +69,28 @@ void subset(int depth) {
 		subset(depth + 1);
 	}
 }
+int main(int argc, char* argv[]) {
+	system("jambai");
+	strcpy(fname, argv[1]);
+	input = (char*)malloc(sizeof(char) * (argc - 2));
+	flag = (int*)malloc(sizeof(int) * (argc - 2));
+
+	fp = fopen(fname, "w");
+
+	for (int i = 2; i < argc; i++)
+		input[i - 2] = *argv[i];
+
+	for (int i = 0; i < argc - 2; i++)
+		flag[i] = 0;
+
+	subset(0);
+
+	printf("^^^^^^^^^^^^^^^\n");
+	printf("Dong Hwan Ahn\n");
+	printf("Student ID : 2018120116\n");
+	printf("^^^^^^^^^^^^^^^\n");
+
+	fclose(fp);
+
+	return 0;
+}
