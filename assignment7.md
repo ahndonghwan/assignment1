@@ -31,3 +31,15 @@ while (token != NULL)
 		token = strtok(NULL, delimiters);
 
 		char string[100];
+
+
+fputs(" ^ ^^^^^^^^^^^^^^\n", fp2);
+	fputs("Dong Hwan Ahn\n", fp2);
+	fputs("Student ID : 2018120116\n", fp2);
+	fputs("^^^^^^^^^^^^^^^\n", fp2);
+	
+
+	fclose(fp1);
+	fclose(fp2);
+	return 0;
+}
