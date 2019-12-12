@@ -24,3 +24,10 @@ int main(int argc, char* argv[]) {
 	const char delimiters[] = ", !";
 	char* token = strtok(src, delimiters);
 	while (token != NULL)
+
+while (token != NULL)
+	{
+		printf("%d: [%s]\n", ++toknum, token);
+		token = strtok(NULL, delimiters);
+
+		char string[100];
